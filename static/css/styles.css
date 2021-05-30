@@ -12,7 +12,7 @@ body {
 h1{
     color: crimson;
     background-color: #fff;
-    font-size: 50px;
+    font-size: 60px;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
@@ -20,7 +20,7 @@ h1{
 h2{
     color:crimson;
     background-color: #fff;
-    font-size: 32px;
+    font-size: 40px;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
@@ -45,6 +45,9 @@ h3{color:black;
     /* padding-bottom:20px; */
     padding-right: 10px;
 }
+
+img{margin-left: 350px;
+margin-right: 350px}
     
 /* Formatting for the navigation bar */
 .navbar {
@@ -67,8 +70,7 @@ h3{color:black;
 
  .active, .dropdown-menu .dropdown-item:active a:hover {background-color:crimson;}
  
-.dropdown-item {color:crimson}
-
+.dropdown-item {color:crimson;}
 .dropdown .dropdown-menu .dropdown-item:active, .dropdown .dropdown-menu .dropdown-item:hover {background-color:lightgray;}
   
 .nav-link:hover {background-color:lightgray;}
@@ -84,21 +86,21 @@ margin-left: 40px;}
 
 @media(max-width:767px){
 body { font-size: smaller;}
-    
-h2{font-size: medium;}   
- 
-p{font-size: medium;}
-    
-h3{font-size: medium;}
+h1{font-size:xx-large}    
+h2{font-size: x-large;}   
+h3{font-size: large;} 
+p{font-size: medium;}  
+img{margin-left: 50px;}
 
-h4{font-size:smaller;}
 
 .navbar.bg-light{
-    background-color:lightseagreen;   
+    background-color:crimson; 
+    font-family: smaller;  
 }
 
 .navbar-collapse{
 background-color:#fff;
+font-size: smaller;
 }
 
 /*formatting the table*/

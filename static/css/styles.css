@@ -1,0 +1,110 @@
+/* Formatting for HTML elements */
+body {
+    padding: 5;
+    margin: 0;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 22px;
+    line-height: 150%;
+    color: #333;
+   }
+
+/*Website Header*/
+h1{
+    color: crimson;
+    background-color: #fff;
+    font-size: 60px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* Format html header statements*/
+h2{
+    color:crimson;
+    background-color: #fff;
+    font-size: 40px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* font formatting for paragraphs */
+p{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: large;
+    /* padding:10px; */
+    background-color: #fff;}
+
+/*Formatting the Visualization section*/
+h3{color:black;
+    background-color: #fff;
+    font-size: 28px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    padding-right: 20px;}
+
+.col-md-12{
+    background-color: #fff;
+    padding-top: 10px;
+    /* padding-bottom:20px; */
+    padding-right: 10px;
+}
+
+img{margin-left: 350px;
+margin-right: 350px}
+    
+/* Formatting for the navigation bar */
+.navbar {
+    background-color:crimson;
+    font-size: 20px; 
+}
+
+.navigation .navbar-brand {
+    color:#fff;
+    margin-left: 10px;
+    margin-right: 20px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    background-color:crimson;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    padding: 10px;
+ }
+
+ .active, .dropdown-menu .dropdown-item:active a:hover {background-color:crimson;}
+ 
+.dropdown-item {color:crimson;}
+.dropdown .dropdown-menu .dropdown-item:active, .dropdown .dropdown-menu .dropdown-item:hover {background-color:lightgray;}
+  
+.nav-link:hover {background-color:lightgray;}
+  
+.navbar-brand:hover {color:lightgray;}
+
+/*formatting the table*/
+table{background-color: #fff;
+margin-left: 40px;}
+
+
+
+
+@media(max-width:767px){
+body { font-size: smaller;}
+h1{font-size:xx-large}    
+h2{font-size: x-large;}   
+h3{font-size: large;} 
+p{font-size: medium;}  
+img{margin-left: 50px;}
+
+
+.navbar.bg-light{
+    background-color:crimson; 
+    font-family: smaller;  
+}
+
+.navbar-collapse{
+background-color:#fff;
+font-size: smaller;
+}
+
+/*formatting the table*/
+table{margin-left: 0px;
+font-size: smaller;}
+}
+

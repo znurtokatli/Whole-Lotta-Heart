@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Whole.Lotta.Heart</title>
+
+  <!-- Bootstrap CSS-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- Our CSS -->
+  <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+  <!-- To avoid favicon.ico error message -->
+  <link rel="icon" href="data:;base64,=">
+
+</head>
+
+<body>
+  <div class="navigation">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid navbar-custom">
+
+        <!--Left Home Bar-->
+        <a class="navbar-brand" href="../../templates/index.html">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!--DropDown Menu-->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Health Data
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="java.html">Java Placeholder</a>
+                <a class="dropdown-item" href="tableau.html">Tableau Placeholder</a>
+                <a class="dropdown-item" href="ml.html">ML Placeholder</a>
+              </div>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0"></form>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <br>
+
+  <!--Create container to hold main body of content-->
+  <div class="container">
+    <div class="col-md-12" id=blank>
+      <div class="row">
+        <div class="col-md-12">
+
+          <!--Page Title-->
+          <h2><strong>Health Indicator Static</strong></h2>
+          <hr>
+
+          <!--Visualization One Code-->
+          <h3 style="text-align: left"
+            style="font-family: Georgia, 'Times New Roman', Times, serif" style="text-align: left;"><strong>TABLEAU CHART PLACEHOLDER</strong></h3>
+          <br>
+          <br>
+          <img src="../images/heart_test.jpg" >
+          <br>
+          <br>
+          <p><strong>Analysis Placeholder</strong></p>
+          <br>
+          <br>
+
+          <!--Visualization Two Code-->
+          <h3 style="text-align: left"
+            style="font-family: Georgia, 'Times New Roman', Times, serif" style="text-align: left;"><strong>TABLEAU CHART PLACEHOLDER</strong></h3>
+          <br>
+          <br>
+          <img src="../images/heart_test.jpg" >
+          <br>
+          <br>
+          <p><strong>Analysis Placeholder</strong></p>
+          <br>
+          <br>
+
+           <!--Visualization Three Code-->
+           <h3 style="text-align: left"
+           style="font-family: Georgia, 'Times New Roman', Times, serif" style="text-align: left;"><strong>TABLEAU CHART PLACEHOLDER</strong></h3>
+         <br>
+         <br>
+         <img src="../images/heart_test.jpg" >
+         <br>
+         <br>
+         <p><strong>Analysis Placeholder</strong></p>
+         <br>
+         <br>
+
+
+         <!------------------------------------Source Links------------------------------------------------------------------------------------------------------------>
+          <!-- Leaflet CSS -->
+          <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+            integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+            crossorigin="" />
+
+          <!-- d3 JS -->
+          <script src="https://d3js.org/d3.v5.min.js"></script>
+
+          <!-- Marker Cluster CSS -->
+          <link rel="stylesheet" type="text/css"
+            href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.css">
+          <link rel="stylesheet" type="text/css"
+            href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.Default.css">
+
+          <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+
+          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+
+          <!-- Our JS -->
+          <script type="text/javascript" src="/static/js/config-key.js"></script>
+
+          <script>
+            var parks_data = '{{ parks | tojson | safe }}';
+          </script>
+
+          <script type="text/javascript" src="/static/js/choropleth.js"></script>
+          <script type="text/javascript" src="/static/js/logic.js"></script>
+          <script type="text/javascript" src="/static/js/maplogic.js"></script>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

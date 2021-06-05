@@ -25,7 +25,9 @@
       <div class="container-fluid navbar-custom">
 
         <!--Left Home Bar-->
-        <a class="navbar-brand" href="../../templates/index.html">Home</a>
+        <!-- <a class="navbar-brand" href="https://whole-lotta-heart.herokuapp.com">Home</a> -->
+        <a class = "nav-item nav-link" id = "home" href="/">Home</a>
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -40,13 +42,14 @@
                 Health Data
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="java.html">Java Placeholder</a>
-                <a class="dropdown-item" href="tableau.html">Tableau Placeholder</a>
-                <a class="dropdown-item" href="ml.html">ML Placeholder</a>
+                <a class="dropdown-item" href="/page_js">JavaScript Graphics</a>
+                <a class="dropdown-item" href="/page_tableau">Tableau Dashboard</a>
+                <a class="dropdown-item" href="/page_ml">Machine Learning</a>
               </div>
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0"></form>
+ 
         </div>
       </div>
     </nav>
@@ -99,6 +102,32 @@
          <p><strong>Analysis Placeholder</strong></p>
          <br>
          <br>
+         <form method="POST">
+          <label for="fname">Gender:</label><br>
+          <input type="radio" id="male" name="gender" value="1">
+          <label for="male">Male</label><br>
+          <input type="radio" id="female" name="gender" value="0">
+          <label for="female">Female</label><br>
+          <br>
+          <label for="fname">Do you have hyptertension?</label><br>
+          <input type="radio" id="Yes" name="hyptertension" value="1">
+          <label for="Yes">Yes</label><br>
+          <input type="radio" id="No" name="hyptertension" value="0">
+          <label for="No">No</label><br>
+          <br>
+          <label for="fname">Do you have heart disease?</label><br>
+          <input type="radio" id="Yes" name="heart disease" value="1">
+          <label for="Yes">Yes</label><br>
+          <input type="radio" id="No" name="heart disease" value="0">
+          <label for="No">No</label><br>
+          <br>
+          <label for="fname">Have you ever been married?</label><br>
+          <input type="radio" id="Yes" name="married" value="1">
+          <label for="Yes">Yes</label><br>
+          <input type="radio" id="No" name="married" value="0">
+          <label for="No">No</label><br>
+        </form>
+               
 
 
          <!------------------------------------Source Links------------------------------------------------------------------------------------------------------------>

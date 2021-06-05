@@ -25,7 +25,9 @@
       <div class="container-fluid navbar-custom">
 
         <!--Left Home Bar-->
-        <a class="navbar-brand" href="../../templates/index.html">Home</a>
+        <!-- <a class="navbar-brand" href="https://whole-lotta-heart.herokuapp.com">Home</a> -->
+        <a class = "nav-item nav-link" id = "home" href="/">Home</a>
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -40,9 +42,9 @@
                 Health Data
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="java.html">Java Placeholder</a>
-                <a class="dropdown-item" href="tableau.html">Tableau Placeholder</a>
-                <a class="dropdown-item" href="ml.html">ML Placeholder</a>
+                <a class="dropdown-item" href="/page_js">JavaScript Graphics</a>
+                <a class="dropdown-item" href="/page_tableau">Tableau Dashboard</a>
+                <a class="dropdown-item" href="/page_ml">Machine Learning</a>
               </div>
             </li>
           </ul>
@@ -61,47 +63,35 @@
         <div class="col-md-12">
 
           <!--Page Title-->
-          <h2><strong>Health Indicator Static</strong></h2>
+          <h2 ><strong>Health Indicator Interactive</strong></h2>
           <hr>
 
-          <!--Visualization One Code-->
-          <h3 style="text-align: left"
-            style="font-family: Georgia, 'Times New Roman', Times, serif" style="text-align: left;"><strong>TABLEAU CHART PLACEHOLDER</strong></h3>
+          <!--First Java Visualization-->
+          <h3 style="text-align: left" 
+            style="font-family: Georgia, 'Times New Roman', Times, serif" style="text-align: left;"><strong>Chart1
+              Placeholder:
+            </strong></h3>
+          
+          <br>
+          <div id="chart1" style="height: 200px"></div>
+          <div class="col-md-8" id=blank></div>
+          <p><strong>Analysis Placeholder.</strong></p>
           <br>
           <br>
-          <img src="../images/heart_test.jpg" >
+
+          <!--Second Java Visualization-->
+          <h3 style="text-align: left" style="color:lightseagreen"
+            style="font-family: Georgia, 'Times New Roman', Times, serif" style="text-align: left;"><strong>Chart2
+              Placeholder
+            </strong></h3>
           <br>
+          <div id="chart2" style="height: 200px"></div>
           <br>
           <p><strong>Analysis Placeholder</strong></p>
           <br>
           <br>
 
-          <!--Visualization Two Code-->
-          <h3 style="text-align: left"
-            style="font-family: Georgia, 'Times New Roman', Times, serif" style="text-align: left;"><strong>TABLEAU CHART PLACEHOLDER</strong></h3>
-          <br>
-          <br>
-          <img src="../images/heart_test.jpg" >
-          <br>
-          <br>
-          <p><strong>Analysis Placeholder</strong></p>
-          <br>
-          <br>
-
-           <!--Visualization Three Code-->
-           <h3 style="text-align: left"
-           style="font-family: Georgia, 'Times New Roman', Times, serif" style="text-align: left;"><strong>TABLEAU CHART PLACEHOLDER</strong></h3>
-         <br>
-         <br>
-         <img src="../images/heart_test.jpg" >
-         <br>
-         <br>
-         <p><strong>Analysis Placeholder</strong></p>
-         <br>
-         <br>
-
-
-         <!------------------------------------Source Links------------------------------------------------------------------------------------------------------------>
+          <!------------------------------------Source Links------------------------------------------------------------------------------------------------------------>
           <!-- Leaflet CSS -->
           <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
             integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
@@ -129,9 +119,11 @@
             crossorigin="anonymous"></script>
 
           <!-- Our JS -->
-          <script type="text/javascript" src="/static/js/config-key.js"></script>
- 
-          <script type="text/javascript" src="/static/js/choropleth.js"></script> 
+          <script type="text/javascript" src="../js/config-key.js"></script>
+          <script type="text/javascript" src="../js/choropleth.js"></script>
+          <script type="text/javascript" src="../js/chart1.js"></script>
+          <script type="text/javascript" src="../js/chart2.js"></script>
+
         </div>
       </div>
     </div>

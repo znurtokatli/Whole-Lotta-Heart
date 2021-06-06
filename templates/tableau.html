@@ -26,7 +26,7 @@
 
         <!--Left Home Bar-->
         <!-- <a class="navbar-brand" href="../../templates/index.html">Home</a> -->
-        <a class = "nav-item nav-link" id = "home" href="/">Home</a>
+        <a class="nav-item nav-link" id="home" style="color: crimson" href="/"><strong> Home</strong></a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,7 +44,7 @@
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="/page_js">JavaScript Graphics</a>
                 <a class="dropdown-item" href="/page_tableau">Tableau Dashboard</a>
-                <a class="dropdown-item" href="/page_ml">Machine Learning</a>
+                <a class="dropdown-item" href="/page_ml">Stroke Predictor</a>
               </div>
             </li>
           </ul>
@@ -53,7 +53,6 @@
       </div>
     </nav>
   </div>
-
   <br>
 
   <!--Create container to hold main body of content-->
@@ -63,11 +62,11 @@
         <div class="col-md-12">
 
           <!--Page Title-->
-          <h2><strong>Health Indicator Static</strong></h2>
+          <h2><strong>Health Indicators</strong></h2>
           <hr>
 
           <!--Visualization One Code-->
-          <h3 style="text-align: left" style="font-family: Georgia, 'Times New Roman', Times, serif"
+          <!-- <h3 style="text-align: left" style="font-family: Georgia, 'Times New Roman', Times, serif"
             style="text-align: left;"><strong>TABLEAU CHART PLACEHOLDER</strong></h3>
           <br>
           <br>
@@ -76,32 +75,38 @@
           <br>
           <p><strong>Analysis Placeholder</strong></p>
           <br>
-          <br>
+          <br> -->
 
-          <!--Visualization Two Code-->
-          <h3 style="text-align: left" style="font-family: Georgia, 'Times New Roman', Times, serif"
-            style="text-align: left;"><strong>TABLEAU CHART PLACEHOLDER</strong></h3>
-          <br>
-          <br>
-          <img src="../images/heart_test.jpg">
-          <br>
-          <br>
-          <p><strong>Analysis Placeholder</strong></p>
-          <br>
-          <br>
-
-          <!--Visualization Three Code-->
-          <h3 style="text-align: left" style="font-family: Georgia, 'Times New Roman', Times, serif"
-            style="text-align: left;"><strong>TABLEAU CHART PLACEHOLDER</strong></h3>
-          <br>
-          <br>
-          <img src="../images/heart_test.jpg">
-          <br>
-          <br>
-          <p><strong>Analysis Placeholder</strong></p>
-          <br>
-          <br>
-
+          <!-- Tableu Interactive Place Holder start -->
+          <div class='tableauPlaceholder' id='viz1622909783416' style='position: relative'><noscript><a href='#'><img
+                  alt='Sheet 1 '
+                  src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;Book-project2&#47;Sheet1&#47;1_rss.png'
+                  style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+              <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+              <param name='embed_code_version' value='3' />
+              <param name='site_root' value='' />
+              <param name='name' value='Book-project2&#47;Sheet1' />
+              <param name='tabs' value='no' />
+              <param name='toolbar' value='yes' />
+              <param name='static_image'
+                value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;Book-project2&#47;Sheet1&#47;1.png' />
+              <param name='animate_transition' value='yes' />
+              <param name='display_static_image' value='yes' />
+              <param name='display_spinner' value='yes' />
+              <param name='display_overlay' value='yes' />
+              <param name='display_count' value='yes' />
+              <param name='language' value='en-US' />
+            </object>
+          </div>
+          <script type='text/javascript'>
+            var divElement = document.getElementById('viz1622909783416');
+            var vizElement = divElement.getElementsByTagName('object')[0];
+            vizElement.style.width = '100%'; vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+            var scriptElement = document.createElement('script');
+            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);
+          </script>
+          <!-- Tableu Interactive Place Holder end -->
 
           <!------------------------------------Source Links------------------------------------------------------------------------------------------------------------>
           <!-- Leaflet CSS -->
@@ -134,42 +139,9 @@
           <script type="text/javascript" src="/static/js/config-key.js"></script>
 
           <script type="text/javascript" src="/static/js/choropleth.js"></script>
-
-          <!-- Tableu Interactive Place Holder start -->
-          <div class='tableauPlaceholder' id='viz1622909783416' style='position: relative'><noscript><a href='#'><img
-                  alt='Sheet 1 '
-                  src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;Book-project2&#47;Sheet1&#47;1_rss.png'
-                  style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
-              <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-              <param name='embed_code_version' value='3' />
-              <param name='site_root' value='' />
-              <param name='name' value='Book-project2&#47;Sheet1' />
-              <param name='tabs' value='no' />
-              <param name='toolbar' value='yes' />
-              <param name='static_image'
-                value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;Book-project2&#47;Sheet1&#47;1.png' />
-              <param name='animate_transition' value='yes' />
-              <param name='display_static_image' value='yes' />
-              <param name='display_spinner' value='yes' />
-              <param name='display_overlay' value='yes' />
-              <param name='display_count' value='yes' />
-              <param name='language' value='en-US' />
-            </object>
-          </div>
-          <script
-            type='text/javascript'>                    
-            var divElement = document.getElementById('viz1622909783416'); 
-            var vizElement = divElement.getElementsByTagName('object')[0]; 
-            vizElement.style.width = '100%'; vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px'; 
-            var scriptElement = document.createElement('script'); 
-                scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; 
-                vizElement.parentNode.insertBefore(scriptElement, vizElement);
-          </script> 
-        <!-- Tableu Interactive Place Holder end -->
         </div>
       </div>
     </div>
   </div>
 </body>
-
 </html>

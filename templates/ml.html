@@ -26,7 +26,7 @@
 
         <!--Left Home Bar-->
         <!-- <a class="navbar-brand" href="https://whole-lotta-heart.herokuapp.com">Home</a> -->
-        <a class = "nav-item nav-link" id = "home" href="/">Home</a>
+        <a class="nav-item nav-link" id="home" style="color: crimson" href="/"><strong> Home</strong></a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,12 +44,12 @@
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="/page_js">JavaScript Graphics</a>
                 <a class="dropdown-item" href="/page_tableau">Tableau Dashboard</a>
-                <a class="dropdown-item" href="/page_ml">Machine Learning</a>
+                <a class="dropdown-item" href="/page_ml">Stroke Predictor</a>
               </div>
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0"></form>
- 
+
         </div>
       </div>
     </nav>
@@ -64,136 +64,112 @@
         <div class="col-md-12">
 
           <!--Page Title-->
-          <h2><strong>Machine Learning Predictions</strong></h2>
+          <h2><strong>Stroke Prediction Model</strong></h2>
           <hr>
+          <h3 style="text-align: left"><strong>Concerned about your risk for stroke?</strong></h3>
+          <p><strong>Our stroke prediction model pulls data from over 5,000 patients monitored for
+              stroke risk and predicts within a .95 accuracy “That’s Good” whether your risk factors
+              increase your likelihood for stroke.</strong></p>
+          <p><strong>Complete our seven question form to access our model's stroke preditions.</strong></p>
 
-          <!--Visualization One Code-->
-          <h3 style="text-align: left"
-            style="font-family: Georgia, 'Times New Roman', Times, serif" style="text-align: left;"><strong>ML PLACEHOLDER</strong></h3>
-          <br>
-          <br>
-          <img  src="../images/heart_test.jpg" >
-          <br>
-          <br>
-          <p><strong>Analysis Placeholder</strong></p>
-          <br>
-          <br>
+          <!-- ml form -->
+          <form method="POST">
+            <label for="fname" style="color:crimson"><strong>Gender assignment at birth?</strong></label><br>
+            <input type="radio" style="margin-left: 30px;" id="male" name="gender" value="1">
+            <label for="male">Male</label><br>
+            <input type="radio" style="margin-left: 30px;" id="female" name="gender" value="0">
+            <label for="female">Female</label><br>
 
-          <!--Visualization Two Code-->
-          <h3 style="text-align: left"
-            style="font-family: Georgia, 'Times New Roman', Times, serif" style="text-align: left;"><strong>ML PLACEHOLDER</strong></h3>
-          <br>
-          <br>
-          <img  src="../images/heart_test.jpg" >
-          <br>
-          <br>
-          <p><strong>Analysis Placeholder</strong></p>
-          <br>
-          <br>
+            <label for="fname" style="color:crimson"><strong>Do you have hyptertension?</strong></label><br>
+            <input type="radio" style="margin-left: 30px;" id="Yes" name="hyptertension" value="1">
+            <label for="Yes">Yes</label><br>
+            <input type="radio" style="margin-left: 30px;" id="No" name="hyptertension" value="0">
+            <label for="No">No</label><br>
 
-           <!--Visualization Three Code-->
-           <h3 style="text-align: left"
-           style="font-family: Georgia, 'Times New Roman', Times, serif" style="text-align: left;"><strong>ML PLACEHOLDER</strong></h3>
-         <br>
-         <br>
-         <img src="../images/heart_test.jpg" >
-         <br>
-         <br>
-         <p><strong>Analysis Placeholder</strong></p>
-         <br>
-         <br>
+            <label for="fname" style="color:crimson"><strong>Do you have heart disease?</strong></label><br>
+            <input type="radio" style="margin-left: 30px;" id="Yes" name="heart disease" value="1">
+            <label for="Yes">Yes</label><br>
+            <input type="radio" style="margin-left: 30px;" id="No" name="heart disease" value="0">
+            <label for="No">No</label><br>
 
-         
-         <!-- ml form -->
-         <form method="POST">
-          <label for="fname">Gender:</label><br>
-          <input type="radio" id="male" name="gender" value="1">
-          <label for="male">Male</label><br>
-          <input type="radio" id="female" name="gender" value="0">
-          <label for="female">Female</label><br>
+            <label for="fname" style="color:crimson"><strong>Have you ever been married?</strong></label><br>
+            <input type="radio" style="margin-left: 30px;" id="Yes" name="married" value="1">
+            <label for="Yes">Yes</label><br>
+            <input type="radio" style="margin-left: 30px;" id="No" name="married" value="0">
+            <label for="No">No</label><br>
+
+            <label for="fname" style="color:crimson"><strong>What best describes your place of
+                work?</strong></label><br>
+            <input type="radio" style="margin-left: 30px;" id="Private" name="work" value="1">
+            <label for="Private">Private</label><br>
+            <input type="radio" style="margin-left: 30px;" id="Government Job" name="work" value="0">
+            <label for="Government Job">Government Job</label><br>
+            <input type="radio" style="margin-left: 30px;" id="Self-Employed" name="work" value="2">
+            <label for="Self-Employed">Self-Employed</label><br>
+            <input type="radio" style="margin-left: 30px;" id="Never Worked" name="work" value="3">
+            <label for="Never Worked">Never Worked</label><br>
+            <input type="radio" style="margin-left: 30px;" id="Stay at Home Parent" name="work" value="4">
+            <label for="Stay at Home Parent">Stay at Home Parent</label><br>
+
+            <label for="fname" style="color:crimson"><strong>Where do you live?</strong></label><br>
+            <input type="radio" style="margin-left: 30px;" id="Urban" name="residence" value="1">
+            <label for="Urban">Urban</label><br>
+            <input type="radio" style="margin-left: 30px;" id="Rural" name="residence" value="0">
+            <label for="Rural">Rural</label><br>
+
+            <label for="fname" style="color:crimson"><strong>What is your smoking status?</strong></label><br>
+            <input type="radio" style="margin-left: 30px;" id="Formerly Smoked" name="smoking" value="1">
+            <label for="Formerly Smoked">Formerly Smoked</label><br>
+            <input type="radio" style="margin-left: 30px;" id="Never Smoked" name="smoking" value="0">
+            <label for="Never Smoked">Never Smoked</label><br>
+            <input type="radio" style="margin-left: 30px;" id="Smokes" name="smoking" value="2">
+            <label for="Smokes">Smokes</label><br>
+
+            <br>
+            <button style="background-color: crimson;" style="color:#fff;"  type="submit" value="Submit"><strong>Predict Stroke Likelihood</strong></button>  
+          </form>
           <br>
-          <label for="fname">Do you have hyptertension?</label><br>
-          <input type="radio" id="Yes" name="hyptertension" value="1">
-          <label for="Yes">Yes</label><br>
-          <input type="radio" id="No" name="hyptertension" value="0">
-          <label for="No">No</label><br>
+          <h3>{{ prediction_text }}</h3>
           <br>
-          <label for="fname">Do you have heart disease?</label><br>
-          <input type="radio" id="Yes" name="heart disease" value="1">
-          <label for="Yes">Yes</label><br>
-          <input type="radio" id="No" name="heart disease" value="0">
-          <label for="No">No</label><br>
-          <br>
-          <label for="fname">Have you ever been married?</label><br>
-          <input type="radio" id="Yes" name="married" value="1">
-          <label for="Yes">Yes</label><br>
-          <input type="radio" id="No" name="married" value="0">
-          <label for="No">No</label><br>
-          <br>
-          <label for="fname">What best describes your place of work?</label><br>
-          <input type="radio" id="Private" name="work" value="1">
-          <label for="Private">Private</label><br>
-          <input type="radio" id="Government Job" name="work" value="0">
-          <label for="Government Job">Government Job</label><br>
-          <input type="radio" id="Self-Employed" name="work" value="2">
-          <label for="Self-Employed">Self-Employed</label><br>
-          <input type="radio" id="Never Worked" name="work" value="3">
-          <label for="Never Worked">Never Worked</label><br>
-          <input type="radio" id="Stay at Home Parent" name="work" value="4">
-          <label for="Stay at Home Parent">Stay at Home Parent</label><br>
-          <br>
-          <label for="fname">Where do you live?</label><br>
-          <input type="radio" id="Urban" name="residence" value="1">
-          <label for="Urban">Urban</label><br>
-          <input type="radio" id="Rural" name="residence" value="0">
-          <label for="Rural">Rural</label><br>
-          <br>
-          <label for="fname">What is your smoking status?</label><br>
-          <input type="radio" id="Formerly Smoked" name="smoking" value="1">
-          <label for="Formerly Smoked">Formerly Smoked</label><br>
-          <input type="radio" id="Never Smoked" name="smoking" value="0">
-          <label for="Never Smoked">Never Smoked</label><br>
-          <input type="radio" id="Smokes" name="smoking" value="2">
-          <label for="Smokes">Smokes</label><br>
-        </form>
- 
-<input type="submit" value="Submit">
-
-         <!------------------------------------Source Links------------------------------------------------------------------------------------------------------------>
-          <!-- Leaflet CSS -->
-          <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
-            integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
-            crossorigin="" />
-
-          <!-- d3 JS -->
-          <script src="https://d3js.org/d3.v5.min.js"></script>
-
-          <!-- Marker Cluster CSS -->
-          <link rel="stylesheet" type="text/css"
-            href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.css">
-          <link rel="stylesheet" type="text/css"
-            href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.Default.css">
-
-          <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"></script>
-
-          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"></script>
-
-          <!-- Our JS -->
-          <script type="text/javascript" src="/static/js/config-key.js"></script>
- 
-
-          <script type="text/javascript" src="/static/js/choropleth.js"></script> 
+          <!-- <input type="reset"> -->
         </div>
+        </form>
+
+        <!------------------------------------Source Links------------------------------------------------------------------------------------------------------------>
+        <!-- Leaflet CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+          integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+          crossorigin="" />
+
+        <!-- d3 JS -->
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+
+        <!-- Marker Cluster CSS -->
+        <link rel="stylesheet" type="text/css"
+          href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.css">
+        <link rel="stylesheet" type="text/css"
+          href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.Default.css">
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+          integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+          crossorigin="anonymous"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+          integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+          crossorigin="anonymous"></script>
+
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+          integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+          crossorigin="anonymous"></script>
+
+        <!-- Our JS -->
+        <script type="text/javascript" src="/static/js/config-key.js"></script>
+
+
+        <script type="text/javascript" src="/static/js/choropleth.js"></script>
       </div>
     </div>
+  </div>
   </div>
 </body>
 

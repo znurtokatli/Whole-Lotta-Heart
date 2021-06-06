@@ -51,8 +51,8 @@ function loadChart() {
     // ==========xScale and yScale
     function xScale(strokeData, chosenXAxis) {
         var xLinearScale = d3.scaleLinear()
-        .domain([d3.max(strokeData, d => d[chosenXAxis]),
-            d3.min(strokeData, d => d[chosenXAxis])
+        .domain([d3.min(strokeData, d => d[chosenXAxis]),
+            d3.max(strokeData, d => d[chosenXAxis])
         ])
         .range([0, width])
         .nice();
@@ -65,7 +65,7 @@ function loadChart() {
         .domain([d3.max(strokeData, d => d[chosenYAxis]),
             d3.min(strokeData, d => d[chosenYAxis])
         ])
-        .range([height, 0])
+        .rangeRound([height, 0])
         .nice();
 
         return yLinearScale;
@@ -177,6 +177,11 @@ function loadChart() {
 
         // ******Testing StateData loaded******
         console.log("strokeData: ", strokeData);
+
+        // var dropdown = d3.select("scatter2");
+        //     data.age.forEach(function(ages){
+        //         dropdown.append("option").text(ages).property("value");
+        // });
 
         // Repeat Linear functions from above retrieval
         var xLinearScale = xScale(strokeData, chosenXAxis);

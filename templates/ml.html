@@ -105,8 +105,9 @@
 
          
          <!-- ml form -->
-         <form action= "{{ url_for('page_ml')}}" method="post"> 
-        <!-- <form action= "ml.html" method="post">  -->
+         <form action= "{{ url_for('page_ml')}}">  
+          <!-- <form action= "{{ url_for('page_ml')}}" method="post">  -->
+         <!-- <form action= "ml.html" method="post">  -->
           <label for="fname">Gender:</label><br>
           <input type="radio" id="male" name="gender" value="1">
           <label for="male">Male</label><br>
@@ -120,9 +121,9 @@
           <label for="No">No</label><br>
           <br>
           <label for="fname">Do you have heart disease?</label><br>
-          <input type="radio" id="Yes" name="heart disease" value="1">
+          <input type="radio" id="Yes" name="heartdisease" value="1">
           <label for="Yes">Yes</label><br>
-          <input type="radio" id="No" name="heart disease" value="0">
+          <input type="radio" id="No" name="heartdisease" value="0">
           <label for="No">No</label><br>
           <br>
           <label for="fname">Have you ever been married?</label><br>

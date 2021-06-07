@@ -23,11 +23,10 @@ import pickle
 
 
 # stroke prediction
-stroke = pd.read_csv('Data/stroke_clean.csv') #stroke_clean_lp
-stroke = stroke[stroke.work_type != 'children']
+stroke = pd.read_csv('Data/stroke_clean_zt.csv') #stroke_clean_lp
+stroke = stroke[stroke.work != 'children']
 stroke = stroke[stroke.gender != 'Other']
-stroke = stroke.dropna()
-
+stroke = stroke.dropna() 
 
 X = stroke.drop("stroke", axis=1)
 y = stroke["stroke"]

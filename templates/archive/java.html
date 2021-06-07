@@ -25,8 +25,8 @@
       <div class="container-fluid navbar-custom">
 
         <!--Left Home Bar-->
-        <!-- <a class="navbar-brand" href="../../templates/index.html">Home</a> -->
-        <a class="nav-item nav-link" id="home" style="color: crimson" href="/"><strong> Home</strong></a>
+        <!-- <a class="navbar-brand" href="https://whole-lotta-heart.herokuapp.com">Home</a> -->
+        <a class = "nav-item nav-link" id = "home" style="color: crimson" href="/"><strong> Home</strong></a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,8 +42,8 @@
                 Health Data
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="/page_js">Health Correlations</a>
-                <a class="dropdown-item" href="/page_tableau">Lifestyle & Health</a>
+                <a class="dropdown-item" href="/page_js">JavaScript Graphics</a>
+                <a class="dropdown-item" href="/page_tableau">Tableau Dashboard</a>
                 <a class="dropdown-item" href="/page_ml">Stroke Predictor</a>
               </div>
             </li>
@@ -53,6 +53,7 @@
       </div>
     </nav>
   </div>
+
   <br>
 
   <!--Create container to hold main body of content-->
@@ -62,33 +63,33 @@
         <div class="col-md-12">
 
           <!--Page Title-->
-          <h2><strong>Lifestyle & Health Indicators</strong></h2>
+          <h2 ><strong>Health Indicator Interactive</strong></h2>
           <hr>
 
-          <div class='tableauPlaceholder' id='viz1623008385811' style='position: relative'><noscript><a href='#'><img alt='Which lifestyle and health factors have an impact on Heart Health? ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Wh&#47;WholeLottaHeart&#47;Heartstory&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'>
-            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
-            <param name='embed_code_version' value='3' /> 
-            <param name='site_root' value='' />
-            <param name='name' value='WholeLottaHeart&#47;Heartstory' />
-            <param name='tabs' value='no' /><param name='toolbar' value='yes' />
-            <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Wh&#47;WholeLottaHeart&#47;Heartstory&#47;1.png' /> 
-            <param name='animate_transition' value='yes' />
-            <param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' />
-            <param name='display_overlay' value='yes' /><param name='display_count' value='yes' />
-            <param name='language' value='en-US' />
-            </object>
-            </div>
-            <script type='text/javascript'>
-            var divElement = document.getElementById('viz1623008385811');
-            var vizElement = divElement.getElementsByTagName('object')[0];
-            vizElement.style.width='1016px';vizElement.style.height='991px';
-            var scriptElement = document.createElement('script');
-            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-            vizElement.parentNode.insertBefore(scriptElement, vizElement);
-            </script>
-            
+          <!--First Java Visualization-->
+          <h3 style="text-align: left" 
+            style="font-family: Georgia, 'Times New Roman', Times, serif" style="text-align: left;"><strong>Chart1
+              Placeholder:
+            </strong></h3>
           
-          <!-- Tableu Interactive Place Holder end -->
+          <br>
+          <div id="chart1" style="height: 200px"></div>
+          <div class="col-md-8" id=blank></div>
+          <p><strong>Analysis Placeholder.</strong></p>
+          <br>
+          <br>
+
+          <!--Second Java Visualization-->
+          <h3 style="text-align: left" style="color:lightseagreen"
+            style="font-family: Georgia, 'Times New Roman', Times, serif" style="text-align: left;"><strong>Chart2
+              Placeholder
+            </strong></h3>
+          <br>
+          <div id="chart2" style="height: 200px"></div>
+          <br>
+          <p><strong>Analysis Placeholder</strong></p>
+          <br>
+          <br>
 
           <!------------------------------------Source Links------------------------------------------------------------------------------------------------------------>
           <!-- Leaflet CSS -->
@@ -118,12 +119,15 @@
             crossorigin="anonymous"></script>
 
           <!-- Our JS -->
-          <script type="text/javascript" src="/static/js/config-key.js"></script>
+          <script type="text/javascript" src="../js/config-key.js"></script>
+          <script type="text/javascript" src="../js/choropleth.js"></script>
+          <script type="text/javascript" src="../js/chart1.js"></script>
+          <script type="text/javascript" src="../js/chart2.js"></script>
 
-          <script type="text/javascript" src="/static/js/choropleth.js"></script>
         </div>
       </div>
     </div>
   </div>
 </body>
+
 </html>

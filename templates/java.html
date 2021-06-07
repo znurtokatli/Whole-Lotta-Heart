@@ -1,21 +1,13 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <title>Whole.Lotta.Heart</title>
-
-  <!-- Bootstrap CSS-->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-  <!-- Our CSS -->
-  <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
-
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-
-  <!-- To avoid favicon.ico error message -->
-  <link rel="icon" href="data:;base64,=">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="assets/css/d3Style.css"> -->
+    <link rel="stylesheet" href="../static/css/styles.css">
 
 </head>
 
@@ -26,7 +18,7 @@
 
         <!--Left Home Bar-->
         <!-- <a class="navbar-brand" href="https://whole-lotta-heart.herokuapp.com">Home</a> -->
-        <a class = "nav-item nav-link" id = "home" href="/">Home</a>
+        <a class="nav-item nav-link" id="home" style="color: crimson" href="/"><strong> Home</strong></a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,9 +34,9 @@
                 Health Data
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="/page_js">JavaScript Graphics</a>
-                <a class="dropdown-item" href="/page_tableau">Tableau Dashboard</a>
-                <a class="dropdown-item" href="/page_ml">Machine Learning</a>
+                <a class="dropdown-item" href="../page_js">Health Correlations</a>
+                <a class="dropdown-item" href="../page_tableau">Lifestyle & Health</a>
+                <a class="dropdown-item" href="../page_ml">Stroke Predictor</a>
               </div>
             </li>
           </ul>
@@ -53,81 +45,83 @@
       </div>
     </nav>
   </div>
-
+  
   <br>
 
-  <!--Create container to hold main body of content-->
+  
   <div class="container">
-    <div class="col-md-12" id=blank>
+     <!--Page Title-->
+     <h2><strong>Health Correlations</strong></h2>
+     <hr>
+
+    <script type="text/javascript" src="../assets/js/app.js"></script>
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
+        <h3 style="text-align: left" style="font-family: Georgia, 'Times New Roman', Times, serif" 
+        style="text-align: left;"><strong>Heart Data:</strong></h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-9">
+        <div id="scatter">
+          <!-- We append our chart here. -->
+        </div>
+      </div>
+      <div class="col-md-3">
+        <p style="color: crimson;"><strong style="font-size: larger;">Correlations Between Age, Cholestorol,
+          Blood Pressure and Heart Rate:</strong></p>
+      <p style="font-size: large;"> <strong>Interactive chart shows the correlation between the test subjects
+          Age and Blood Pressure or Max
+          Heart Rate.It also shows the correlation between Cholestorol and Blood Pressure or Heart
+          Rate.</strong></p>
+      <p style="font-size: small;"><strong style="color: crimson;">Click on the bubble to review the related
+          numbers.</strong></p>
+      </div>
+
       <div class="row">
-        <div class="col-md-12">
-
-          <!--Page Title-->
-          <h2 ><strong>Health Indicator Interactive</strong></h2>
-          <hr>
-
-          <!--First Java Visualization-->
-          <h3 style="text-align: left" 
-            style="font-family: Georgia, 'Times New Roman', Times, serif" style="text-align: left;"><strong>Chart1
-              Placeholder:
-            </strong></h3>
-          
-          <br>
-          <div id="chart1" style="height: 200px"></div>
-          <div class="col-md-8" id=blank></div>
-          <p><strong>Analysis Placeholder.</strong></p>
-          <br>
-          <br>
-
-          <!--Second Java Visualization-->
-          <h3 style="text-align: left" style="color:lightseagreen"
-            style="font-family: Georgia, 'Times New Roman', Times, serif" style="text-align: left;"><strong>Chart2
-              Placeholder
-            </strong></h3>
-          <br>
-          <div id="chart2" style="height: 200px"></div>
-          <br>
-          <p><strong>Analysis Placeholder</strong></p>
-          <br>
-          <br>
-
-          <!------------------------------------Source Links------------------------------------------------------------------------------------------------------------>
-          <!-- Leaflet CSS -->
-          <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
-            integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
-            crossorigin="" />
-
-          <!-- d3 JS -->
-          <script src="https://d3js.org/d3.v5.min.js"></script>
-
-          <!-- Marker Cluster CSS -->
-          <link rel="stylesheet" type="text/css"
-            href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.css">
-          <link rel="stylesheet" type="text/css"
-            href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.Default.css">
-
-          <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"></script>
-
-          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"></script>
-
-          <!-- Our JS -->
-          <script type="text/javascript" src="../js/config-key.js"></script>
-          <script type="text/javascript" src="../js/choropleth.js"></script>
-          <script type="text/javascript" src="../js/chart1.js"></script>
-          <script type="text/javascript" src="../js/chart2.js"></script>
-
+        <div class="col-xs-12 col-md-12">
+          <script type="text/javascript" src="../assets/js/app2.js"></script>
+          <h3 style="text-align: left" style="font-family: Georgia, 'Times New Roman', Times, serif"
+          style="text-align: left;"><strong>Stroke Data:
+                  </strong></h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-9">
+          <div id="scatter2">
+            <!-- We append our chart here. -->
+          </div>
+        </div>
+        <div class="col-md-3">
+          <p style="color: crimson;"><strong style="font-size: larger;">Correlations Between Age, Glucose Level and BMI</strong></p>
+          <p style="font-size: large;"><strong>Interactive chart shows the correlation between the test subjects Age and Glucose Level and Hypertension
+            or BMI.</strong></p>
+            <p style="font-size: small;"><strong style="color: crimson;">Click on the bubble to review the related
+              numbers.</strong></p>
         </div>
       </div>
     </div>
   </div>
+  <br>
+
+  <!-- Footer-->
+  <div id="footer">
+    <p style="margin-left: 50px;">Melinda Ann Eudy&copy;2021</p>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="http://dimplejs.org/dist/dimple.v2.3.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
+  <script type="text/javascript" src="../assets/js/app.js"></script>
+  <script type="text/javascript" src="../assets/js/app2.js"></script>
 </body>
 
 </html>

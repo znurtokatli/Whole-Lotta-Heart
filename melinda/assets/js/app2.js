@@ -71,7 +71,7 @@ function loadChart() {
         return yLinearScale;
     }
 
-    // updating xAxis  and yAxis variable upon click on axis label
+    // updating xAxis and yAxis variable upon click on axis label
     function renderXAxes(newXScale, xAxis) {
         var bottomAxis = d3.axisBottom(newXScale);
   
@@ -175,14 +175,24 @@ function loadChart() {
             data.bmi = +data.bmi;
         });
 
-        // ******Testing StateData loaded******
+        // ******Testing strokeData loaded******
         console.log("strokeData: ", strokeData);
 
-        // var dropdown = d3.select("scatter2");
-        //     data.age.forEach(function(ages){
-        //         dropdown.append("option").text(ages).property("value");
-        // });
+        // // Starting age count
+        // var sum = 0;
+        // var agegroup = [];
+        // var ages = data.age;
 
+        // // Use a for loop to iterate through the ages
+        // for (var i = 0; i < ages.length; i++) {
+        //     var ages = agegroup[i];
+        //     sum += agegroup;
+        // }
+
+        // var dropdown = d3.select("#selectButton")
+        //     .data([agegroup])
+        //         dropdown.append("option").text(agegroup).property("value");
+    
         // Repeat Linear functions from above retrieval
         var xLinearScale = xScale(strokeData, chosenXAxis);
         var yLinearScale = yScale(strokeData, chosenYAxis);

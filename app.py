@@ -1,27 +1,18 @@
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-import sqlalchemy
-from sqlalchemy import engine
-from sqlalchemy import log
-from sqlalchemy.ext.automap import automap_base
-from sqlalchemy.orm import Session
-from sqlalchemy import create_engine, func, Table
-from sqlalchemy.sql.schema import MetaData
-import pandas as pd
-from flask import Blueprint, render_template, Flask, jsonify
 # ml dependencies
 import numpy as np
 from flask import Flask, request, jsonify, render_template
-import pickle
-from sklearn import preprocessing
-from sklearn.model_selection import train_test_split
-from sklearn import metrics
-from sklearn.metrics import confusion_matrix
-import statsmodels.api as sm
-from sklearn import linear_model
-  
+from flask_sqlalchemy import SQLAlchemy 
+import pickle   
+
+from config import db_pwd
+
 app = Flask(__name__)
-model = pickle.load(open('trained_model.pkl', 'rb'))
+
+app.config["SQLALCHEMY_DATABASE_URI"] = f'postgresql://postgres:{db_pwd} .\
+                @https://uncc-datavizbc-finalproject-data.s3.us-east-2.amazonaws.com/:5432/postgres'
+
+db = SQLAlchemy(app) 
+model = pickle.load(open('model.pkl', 'rb'))
 
 @app.route('/')
 def home():
@@ -39,25 +30,27 @@ def page_js():
 def page_tableau():
     return render_template("tableau.html")   #tableau charts
  
-@app.route('/page_ml', methods=['POST'])
+@app.route('/page_ml') #, methods=['POST'])
 def page_ml():
 
     int_features = [int(x) for x in request.form.values()]
     final_features = [np.array(int_features)]
     prediction = model.predict(final_features)
+
     output = round(prediction[0], 2)
 
-    return render_template("ml.html", prediction_text='Your predicted is {}'.format(output))
+    return render_template('ml.html', prediction_text='Stroke Prediction {}'.format(output))
 
-@app.route('/results',methods=['POST'])
-def results():
+@app.route('/predict_api') #, methods=['POST'])
+#for direct api request
+def predict_api(): 
 
-    data = request.get_json(force = True)
+    data = request.get_json(force=True)
     prediction = model.predict([np.array(list(data.values()))])
 
     output = prediction[0]
-    return jsonify(output)
- 
+    return jsonify(output) 
+
 if __name__ == '__main__':
     app.run(debug = True)
  

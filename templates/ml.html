@@ -105,7 +105,8 @@
 
          
          <!-- ml form -->
-         <form method="POST">
+         <form action= "{{ url_for('page_ml')}}" method="post"> 
+        <!-- <form action= "ml.html" method="post">  -->
           <label for="fname">Gender:</label><br>
           <input type="radio" id="male" name="gender" value="1">
           <label for="male">Male</label><br>
@@ -155,9 +156,16 @@
           <label for="Never Smoked">Never Smoked</label><br>
           <input type="radio" id="Smokes" name="smoking" value="2">
           <label for="Smokes">Smokes</label><br>
+              
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict Data With Model</button>
         </form>
+    
+       <br>
+       <br>
+       {{ prediction_text }}
+     
  
-<input type="submit" value="Submit">
+<!-- <input type="submit" value="Submit"> -->
 
          <!------------------------------------Source Links------------------------------------------------------------------------------------------------------------>
           <!-- Leaflet CSS -->

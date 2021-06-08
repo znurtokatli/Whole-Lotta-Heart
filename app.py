@@ -40,16 +40,16 @@ def predict():
 
     output = round(prediction[0], 2)
 
-    return render_template('ml.html', prediction_text='Stroke Prediction {}'.format(output))
+    return render_template('ml.html', prediction_text='Not Likely Stroke Predicted {}'.format(output))
 
-@app.route('/predict_api', methods=['POST'])
-def predict_api(): 
+# @app.route('/predict_api', methods=['POST'])
+# def predict_api(): 
 
-    data = request.get_json(force = True)
-    prediction = model.predict([np.array(list(data.values()))])
+#     data = request.get_json(force = True)
+#     prediction = model.predict([np.array(list(data.values()))])
 
-    output = prediction[0]
-    return jsonify(output)
+#     output = prediction[0]
+#     return jsonify(output)
 
 if __name__ == '__main__':
     app.run(debug = True)

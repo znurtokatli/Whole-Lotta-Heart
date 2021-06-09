@@ -22,35 +22,30 @@ def home():
 def page_js():
     return render_template("java.html")   #js graphics
 
+@app.route('/page_tableau')
+def page_tableau():
+    return render_template("tableau.html")   #tableau charts
+
 @app.route('/page_ml')
 def page_ml():
     return render_template("ml.html")   #machine learning data
 
-@app.route('/page_tableau')
-def page_tableau():
-    return render_template("tableau.html")   #tableau charts
-    
-
-@app.route('/predict', methods=['POST'])
-def predict():
+@app.route('/page_ml', methods=['POST'])
+def page_ml_post():
     
     int_features = [int(x) for x in request.form.values()]
     final_features = [np.array(int_features)]
     prediction = model.predict(final_features)
 
     output = round(prediction[0], 2)
+     
+    if(output == 0): 
+        output_text = "Viva! You're not under risk."
+    else:
+        output_text = "Time to new beginnings!"
 
-    return render_template('ml.html', prediction_text='Not Likely Stroke Predicted {}'.format(output))
-
-# @app.route('/predict_api', methods=['POST'])
-# def predict_api(): 
-
-#     data = request.get_json(force = True)
-#     prediction = model.predict([np.array(list(data.values()))])
-
-#     output = prediction[0]
-#     return jsonify(output)
-
+    return render_template('ml.html', prediction_text='Predicted {}'.format(output_text))
+  
 if __name__ == '__main__':
     app.run(debug = True)
  

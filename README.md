@@ -2,10 +2,8 @@
 Final result: https://whole-lotta-heart.herokuapp.com
 
 ## Team Members:
-• Melinda Eudy 
-
-• Sarah Green 
-
+• Melinda Eudy   
+• Sarah Green   
 • Lauren Parrish 
 
 • Kelly Rose 

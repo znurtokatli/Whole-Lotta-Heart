@@ -51,8 +51,8 @@ function loadChart() {
     // ==========xScale and yScale
     function xScale(strokeData, chosenXAxis) {
         var xLinearScale = d3.scaleLinear()
-        .domain([d3.max(strokeData, d => d[chosenXAxis]),
-            d3.min(strokeData, d => d[chosenXAxis])
+        .domain([d3.min(strokeData, d => d[chosenXAxis]),
+            d3.max(strokeData, d => d[chosenXAxis])
         ])
         .range([0, width])
         .nice();
@@ -65,13 +65,13 @@ function loadChart() {
         .domain([d3.max(strokeData, d => d[chosenYAxis]),
             d3.min(strokeData, d => d[chosenYAxis])
         ])
-        .range([height, 0])
+        .rangeRound([height, 0])
         .nice();
 
         return yLinearScale;
     }
 
-    // updating xAxis  and yAxis variable upon click on axis label
+    // updating xAxis and yAxis variable upon click on axis label
     function renderXAxes(newXScale, xAxis) {
         var bottomAxis = d3.axisBottom(newXScale);
   
@@ -165,20 +165,21 @@ function loadChart() {
 
     // =================================================================================
     // ===============Retrieving data & Parse data======================================
-    d3.csv("/static/assets/stroke_clean.csv").then(function(strokeData, err) { 
+    d3.csv("/static/assets/stroke_clean.csv").then(function(strokeData, err) {
+        // /static/assets/heart_clean.csv
         // static/assets/stroke_clean.csv
         if (err) throw err;
 
-          // parse data
+        //parse data
         strokeData.forEach(function(data) {
             data.age = +data.age;
             data.avg_glucose_level = +data.avg_glucose_level;
             data.bmi = +data.bmi;
         });
 
-        // ******Testing StateData loaded******
+        // ******Testing strokeData loaded******
         console.log("strokeData: ", strokeData);
-
+    
         // Repeat Linear functions from above retrieval
         var xLinearScale = xScale(strokeData, chosenXAxis);
         var yLinearScale = yScale(strokeData, chosenYAxis);
@@ -304,6 +305,59 @@ function loadChart() {
                     .classed("inactive", false);
                 }
             })
+
+          
+            strokeData.forEach(myFunction);
+            function myFunction(item, index) {
+            document.getElementById("demo").innerHTML += index + ":" + item + "<br>";
+            }
+
+            var age = strokeData.age;
+            console.log("age:", strokeData.age);
+        
+            var sum = 0;
+            var age_0_to_20 = [];
+            var age_21_to_40 = [];
+            var age_41_to_60 = [];
+            var age_61_to_80 = [];
+            var age_81_to_100 = [];
+
+            for (var i = 0; i < age.length; i++) {
+                var ages = age[i];
+                    sum += ages;
+
+                if (age < 21) {
+                    age_0_to_20.push(ages)
+                }
+                else if (age < 41 && age > 20) {
+                    age_21_to_40.push(ages)
+                }
+                else if (age < 61 && age > 40) {
+                    age_41_to_60.push(ages)
+                }
+                else if (age < 81 && age > 61) {
+                    age_61_to_80.push(ages)
+                }
+                else {
+                    age_81_to_100.push(ages)
+                }
+
+            var sum_age_0_to_20 = age_0_to_20.length;
+            var sum_age_21_to_40 = age_21_to_40.length;
+            var sum_age_41_to_60 = age_41_to_60.length;
+            var sum_age_61_to_80 = age_61_to_80.length;
+            var sum_age_81_to_100 = age_81_to_100.length;
+
+            console.log(sum_age_0_to_20);
+            console.log(sum_age_21_to_40);
+            console.log(sum_age_41_to_60);
+            console.log(sum_age_61_to_80);
+            console.log(sum_age_81_to_100);
+
+            var dropdown = d3.select("#dropdown");
+
+         
+            }
     
             
         }).catch(function(error) {

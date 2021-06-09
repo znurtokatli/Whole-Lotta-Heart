@@ -62,7 +62,7 @@ function loadChart() {
     function yScale(HeartData, chosenYAxis) {
         var yLinearScale = d3.scaleLinear()
         .domain([0, d3.max(HeartData, d => d[chosenYAxis])])
-        .range([height, 0])
+        .rangeRound([height, 0])
         .nice(); 
 
         return yLinearScale;
@@ -165,9 +165,18 @@ function loadChart() {
 
     // =================================================================================
     // ===============Retrieving data & Parse data======================================
-    console.log("app js test ")
-    d3.csv("/static/assets/heart_clean.csv").then(function(HeartData, err) {  
+    d3.csv("/static/assets/heart_clean.csv").then(function(HeartData, err) {
+        // /static/assets/heart_clean.csv
         if (err) throw err;
+
+        // parse data
+        HeartData.forEach(function(data) {
+            data.age = +data.age;
+            data.resting_blood_pressure = +data.resting_blood_pressure;
+            data.cholesterol = +data.cholesterol;
+            data.max_heart_rate = +data.max_heart_rate
+        });
+
 
         // ******Testing StateData loaded******
         console.log("HeartData: ", HeartData);

@@ -9,7 +9,7 @@ Final result: https://whole-lotta-heart.herokuapp.com
 • Zehra Tokatli
 
 ## Project Description
-Created an interactive website allowing users to explore the health indicators most significant to the heart, mind, and even financial health. 
+Created an interactive website allowing users to explore the health indicators most significant to the heart, mind and financial health. 
 
 ## Project Details
 • Leveraged three datasets from Kaggle.com which reflected predictors like smoking, blood pressure, and relationship status and how they contribute to heart disease, stroke, and medical cost.   

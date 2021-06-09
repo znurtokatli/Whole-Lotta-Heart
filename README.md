@@ -28,13 +28,12 @@ Created an interactive website allowing users to explore the health indicators m
   https://www.kaggle.com/mirichoi0218/insurance
 
 ## Project breakdown
-
-• Set up AWS bucket using S3   
-• Imported CSVs into Python and cleaned data --- OR WAS THIS IN COLAB?   
+   
+• Imported CSVs into Python and cleaned data   
 • Created SQL database and loaded clean data   
-• Created HTML and CSS to display the final product    
+• Created HTML, CSS and Bootstrap to display the final product    
 • Used Tableau and Javascript to create interactive charts from the dataset.  
 • Used Tableau web connector to display interactive story to Heroku.   
-• Created logistical regression model and interactive survey for machine learning.   
+• Created logistical regression model using Scikit-learn, and created interactive survey for machine learning using Pickle. 
 • Used flask to deploy machine learning.   
 • Rendered this page using Heroku to https://whole-lotta-heart.herokuapp.com

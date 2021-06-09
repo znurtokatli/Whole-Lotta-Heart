@@ -46,9 +46,8 @@ h3{color:black;
     padding-right: 10px;
 }
 
-img{height: 60%;
-width: 90%;
-margin-left: 50px;}
+img{margin-left: 350px;
+margin-right: 350px}
     
 /* Formatting for the navigation bar */
 .navbar {
@@ -108,4 +107,3 @@ font-size: smaller;
 table{margin-left: 0px;
 font-size: smaller;}
 }
-

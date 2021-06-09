@@ -29,7 +29,7 @@ def page_ml():
 @app.route('/page_tableau')
 def page_tableau():
     return render_template("tableau.html")   #tableau charts
-   
+    
 
 @app.route('/predict', methods=['POST'])
 def predict():

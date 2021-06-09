@@ -1,1 +1,3 @@
-Initial README file
+## Whole Lotta Heart
+
+## Team Members:

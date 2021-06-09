@@ -44,7 +44,7 @@ def page_ml_post():
     else:
         output_text = "Time to new beginnings!"
 
-    return render_template('ml.html', prediction_text='Predicted {}'.format(output_text))
+    return render_template('ml.html', prediction_text='{}'.format(output_text))
   
 if __name__ == '__main__':
     app.run(debug = True)

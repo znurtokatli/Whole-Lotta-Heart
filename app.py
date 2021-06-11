@@ -1,26 +1,18 @@
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-import sqlalchemy
-from sqlalchemy import engine
-from sqlalchemy import log
-from sqlalchemy.ext.automap import automap_base
-from sqlalchemy.orm import Session
-from sqlalchemy import create_engine, func, Table
-from sqlalchemy.sql.schema import MetaData
-import pandas as pd
-from flask import Blueprint, render_template, Flask, jsonify
+# ml dependencies
 import numpy as np
 from flask import Flask, request, jsonify, render_template
-import pickle
-from sklearn import preprocessing
-from sklearn.model_selection import train_test_split
-from sklearn import metrics
-from sklearn.metrics import confusion_matrix
-import statsmodels.api as sm
-from sklearn import linear_model
+from flask_sqlalchemy import SQLAlchemy 
+import pickle   
 
+from config import db_pwd
  
 app = Flask(__name__)
+
+app.config["SQLALCHEMY_DATABASE_URI"] = f'postgresql://postgres:{db_pwd} .\
+                @https://uncc-datavizbc-finalproject-data.s3.us-east-2.amazonaws.com/:5432/postgres'
+
+db = SQLAlchemy(app) 
+model = pickle.load(open('model.pkl', 'rb'))
 
 @app.route('/')
 def home():
@@ -30,37 +22,30 @@ def home():
 def page_js():
     return render_template("java.html")   #js graphics
 
-@app.route('/page_ml')
-def page_ml():
-    return render_template("ml.html")   #machine learning data
-
 @app.route('/page_tableau')
 def page_tableau():
     return render_template("tableau.html")   #tableau charts
 
-##################################Model Prediction#####################################
+@app.route('/page_ml')
+def page_ml():
+    return render_template("ml.html")   #machine learning data
 
-# @app.route('/predict',methods=['POST'])
-# def predict():
+@app.route('/page_ml', methods=['POST'])
+def page_ml_post():
+    
+    int_features = [int(x) for x in request.form.values()]
+    final_features = [np.array(int_features)]
+    prediction = model.predict(final_features)
 
-#     int_features = [int(x) for x in request.form.values()]
-#     final_features = [np.array(int_features)]
-#     prediction = model.predict(final_features)
-#     output = round(prediction[0], 2)
+    output = round(prediction[0], 2)
+     
+    if(output == 0): 
+        output_text = "Viva! You're not under risk."
+    else:
+        output_text = "Time to new beginnings!"
 
-#     return render_template("ml.html", prediction_text='Do you have an elevated stroke risk:  {}'.format(output))
-
-# @app.route('/results',methods=['POST'])
-# def results():
-
-#     data = request.get_json(force=True)
-#     prediction = model.predict([np.array(list(data.values()))])
-
-#     output = prediction[0]
-#     return jsonify(output)
-
-##################################Model Prediction##################################### 
-
+    return render_template('ml.html', prediction_text='{}'.format(output_text))
+  
 if __name__ == '__main__':
     app.run(debug = True)
  

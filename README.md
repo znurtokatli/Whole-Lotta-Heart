@@ -1,6 +1,10 @@
 ## Whole Lotta Heart
 Final result: https://whole-lotta-heart.herokuapp.com
 
+
+![website](images/readme.mp4)
+
+
 ## Team Members:
 • Melinda Eudy   
 • Sarah Green   

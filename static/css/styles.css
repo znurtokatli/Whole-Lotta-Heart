@@ -46,9 +46,8 @@ h3{color:black;
     padding-right: 10px;
 }
 
-img{height: 60%;
-width: 90%;
-margin-left: 50px;}
+/* img{margin-left: 350px;
+margin-right: 350px} */
     
 /* Formatting for the navigation bar */
 .navbar {
@@ -91,7 +90,7 @@ h1{font-size:xx-large}
 h2{font-size: x-large;}   
 h3{font-size: large;} 
 p{font-size: medium;}  
-img{margin-left: 50px;}
+/* img{margin-left: 50px;} */
 
 
 .navbar.bg-light{
@@ -108,4 +107,3 @@ font-size: smaller;
 table{margin-left: 0px;
 font-size: smaller;}
 }
-

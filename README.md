@@ -2,7 +2,7 @@
 Final result: https://whole-lotta-heart.herokuapp.com
 
 
-![website](images/readme.gif)
+![website](https://github.com/znurtokatli/final-project/blob/main/images/readme.gif))
 
 
 ## Team Members:

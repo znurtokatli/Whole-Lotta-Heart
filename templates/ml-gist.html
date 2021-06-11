@@ -25,8 +25,8 @@
       <div class="container-fluid navbar-custom">
 
         <!--Left Home Bar-->
-        <!-- <a class="navbar-brand" href="https://whole-lotta-heart.herokuapp.com">Home</a> -->
-        <a class = "nav-item nav-link" id = "home" style="color: crimson" href="/"><strong> Home</strong></a>
+        <!-- <a class="navbar-brand" href="../../templates/index.html">Home</a> -->
+        <a class="nav-item nav-link" id="home" style="color: crimson" href="/"><strong> Home</strong></a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,8 +42,8 @@
                 Health Data
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="/page_js">JavaScript Graphics</a>
-                <a class="dropdown-item" href="/page_tableau">Tableau Dashboard</a>
+                <a class="dropdown-item" href="/page_js">Health Correlations</a>
+                <a class="dropdown-item" href="/page_tableau">Lifestyle & Health</a>
                 <a class="dropdown-item" href="/page_ml">Stroke Predictor</a>
               </div>
             </li>
@@ -53,7 +53,6 @@
       </div>
     </nav>
   </div>
-
   <br>
 
   <!--Create container to hold main body of content-->
@@ -63,33 +62,15 @@
         <div class="col-md-12">
 
           <!--Page Title-->
-          <h2 ><strong>Health Indicator Interactive</strong></h2>
+          <h2><strong>Lifestyle & Health Indicators</strong></h2>
           <hr>
-
-          <!--First Java Visualization-->
-          <h3 style="text-align: left" 
-            style="font-family: Georgia, 'Times New Roman', Times, serif" style="text-align: left;"><strong>Chart1
-              Placeholder:
-            </strong></h3>
           
-          <br>
-          <div id="chart1" style="height: 200px"></div>
-          <div class="col-md-8" id=blank></div>
-          <p><strong>Analysis Placeholder.</strong></p>
-          <br>
-          <br>
 
-          <!--Second Java Visualization-->
-          <h3 style="text-align: left" style="color:lightseagreen"
-            style="font-family: Georgia, 'Times New Roman', Times, serif" style="text-align: left;"><strong>Chart2
-              Placeholder
-            </strong></h3>
-          <br>
-          <div id="chart2" style="height: 200px"></div>
-          <br>
-          <p><strong>Analysis Placeholder</strong></p>
-          <br>
-          <br>
+          <script src="https://gist.github.com/znurtokatli/8c174848da85a30d77c26a9c43c6cc37.js"></script>
+
+
+
+
 
           <!------------------------------------Source Links------------------------------------------------------------------------------------------------------------>
           <!-- Leaflet CSS -->
@@ -116,18 +97,10 @@
 
           <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"></script>
-
-          <!-- Our JS -->
-          <script type="text/javascript" src="../js/config-key.js"></script>
-          <script type="text/javascript" src="../js/choropleth.js"></script>
-          <script type="text/javascript" src="../js/chart1.js"></script>
-          <script type="text/javascript" src="../js/chart2.js"></script>
-
+            crossorigin="anonymous"></script> 
         </div>
       </div>
     </div>
   </div>
 </body>
-
 </html>

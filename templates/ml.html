@@ -17,6 +17,19 @@
   <!-- To avoid favicon.ico error message -->
   <link rel="icon" href="data:;base64,=">
 
+  <style>
+    table {
+      border: dotted 3px black;
+      border-collapse: collapse;
+    } 
+    th, td {
+      padding: 5px;
+    }
+    th {
+      text-align: left;
+    }
+    </style>
+
 </head>
 
 <body>
@@ -71,66 +84,100 @@
               stroke risk and predicts within a .95 accuracy “That’s Good” whether your risk factors
               increase your likelihood for stroke.</strong></p>
           <p><strong>Complete our seven question form to access our model's stroke preditions.</strong></p>
+          <br>
+         <!-- ml form -->
+         <form action= "/page_ml" method = "post">  
+          <!-- <form action= "{{ url_for('page_ml')}}" method="post">  -->
+         <!-- <form action= "ml.html" method="post">  -->
 
-          <!-- ml form -->
-          <form method="POST">
+        <table style="width:100%" class="center" >  
+          <tr> 
+          <td style="text-align:left"> 
             <label for="fname" style="color:crimson"><strong>Gender assignment at birth?</strong></label><br>
-            <input type="radio" style="margin-left: 30px;" id="male" name="gender" value="1">
+            <input type="radio" style="margin-left: 30px;" id="male" name="gender" value="1" required>
             <label for="male">Male</label><br>
-            <input type="radio" style="margin-left: 30px;" id="female" name="gender" value="0">
-            <label for="female">Female</label><br>
-
+            <input type="radio" style="margin-left: 30px;" id="female" name="gender" value="0" >
+            <label for="female">Female</label><br> 
+          </td>
+          <td>
             <label for="fname" style="color:crimson"><strong>Do you have hyptertension?</strong></label><br>
-            <input type="radio" style="margin-left: 30px;" id="Yes" name="hyptertension" value="1">
-            <label for="Yes">Yes</label><br>
-            <input type="radio" style="margin-left: 30px;" id="No" name="hyptertension" value="0">
-            <label for="No">No</label><br>
+            <input type="radio" style="margin-left: 30px;" id="yes1" name="hyptertension" value="1" required>
+            <label for="yes1">Yes</label><br>
+            <input type="radio" style="margin-left: 30px;" id="no1" name="hyptertension" value="0">
+            <label for="no1">No</label><br>
+          </td>
+          </tr>
 
+          <tr>
+          <td> 
             <label for="fname" style="color:crimson"><strong>Do you have heart disease?</strong></label><br>
-            <input type="radio" style="margin-left: 30px;" id="Yes" name="heart disease" value="1">
-            <label for="Yes">Yes</label><br>
-            <input type="radio" style="margin-left: 30px;" id="No" name="heart disease" value="0">
-            <label for="No">No</label><br>
-
+            <input type="radio" style="margin-left: 30px;" id="yes2" name="heartdisease" value="1" required>
+            <label for="yes2">Yes</label><br>
+            <input type="radio" style="margin-left: 30px;" id="no2" name="heartdisease" value="0">
+            <label for="no2">No</label><br> 
+          </td>
+          <td> 
             <label for="fname" style="color:crimson"><strong>Have you ever been married?</strong></label><br>
-            <input type="radio" style="margin-left: 30px;" id="Yes" name="married" value="1">
-            <label for="Yes">Yes</label><br>
-            <input type="radio" style="margin-left: 30px;" id="No" name="married" value="0">
-            <label for="No">No</label><br>
-
-            <label for="fname" style="color:crimson"><strong>What best describes your place of
-                work?</strong></label><br>
-            <input type="radio" style="margin-left: 30px;" id="Private" name="work" value="1">
+            <input type="radio" style="margin-left: 30px;" id="yes3" name="married" value="1" required>
+            <label for="yes3">Yes</label><br>
+            <input type="radio" style="margin-left: 30px;" id="no3" name="married" value="0">
+            <label for="no3">No</label><br>
+          </td>
+          </tr> 
+          <tr> 
+          <td>  
+            <label for="fname" style="color:crimson"><strong>What is your smoking status?</strong></label><br>
+            <input type="radio" style="margin-left: 30px;" id="Formerly Smoked" name="smoking" value="1" required> 
+            <label for="Formerly Smoked">Formerly Smoked</label><br>
+            <input type="radio" style="margin-left: 30px;" id="Never Smoked" name="smoking" value="0">
+            <label for="Never Smoked">Never Smoked</label><br>
+            <input type="radio" style="margin-left: 30px;" id="Smokes" name="smoking" value="2">
+            <label for="Smokes">Smokes</label> <br>
+ 
+          </td>
+          <td style="vertical-align: top;"> 
+            <label for="fname" style="color:crimson"><strong>Where do you live?</strong></label><br>
+            <input type="radio" style="margin-left: 30px;" id="Urban" name="residence" value="1" required>
+          <label for="Urban">Urban</label><br>
+          <input type="radio" style="margin-left: 30px;" id="Rural" name="residence" value="0">
+          <label for="Rural">Rural</label><br>
+          </td> 
+          </tr> 
+          <tr>
+          <td> 
+            <label for="fname" style="color:crimson"><strong>What best describes your place of work? 
+            </strong></label><br>
+            <input type="radio" style="margin-left: 30px;" id="Private" name="work" value="1" required>
             <label for="Private">Private</label><br>
             <input type="radio" style="margin-left: 30px;" id="Government Job" name="work" value="0">
             <label for="Government Job">Government Job</label><br>
             <input type="radio" style="margin-left: 30px;" id="Self-Employed" name="work" value="2">
             <label for="Self-Employed">Self-Employed</label><br>
             <input type="radio" style="margin-left: 30px;" id="Never Worked" name="work" value="3">
-            <label for="Never Worked">Never Worked</label><br>
+            <label for="Never Worked">Never Worked</label><br> 
             <input type="radio" style="margin-left: 30px;" id="Child" name="work" value="4">
-            <label for="Child">Child</label><br>
+            <label for="Child">Child</label><br>           
 
-            <label for="fname" style="color:crimson"><strong>Where do you live?</strong></label><br>
-            <input type="radio" style="margin-left: 30px;" id="Urban" name="residence" value="1">
-            <label for="Urban">Urban</label><br>
-            <input type="radio" style="margin-left: 30px;" id="Rural" name="residence" value="0">
-            <label for="Rural">Rural</label><br>
-
-            <label for="fname" style="color:crimson"><strong>What is your smoking status?</strong></label><br>
-            <input type="radio" style="margin-left: 30px;" id="Formerly Smoked" name="smoking" value="1">
-            <label for="Formerly Smoked">Formerly Smoked</label><br>
-            <input type="radio" style="margin-left: 30px;" id="Never Smoked" name="smoking" value="0">
-            <label for="Never Smoked">Never Smoked</label><br>
-            <input type="radio" style="margin-left: 30px;" id="Smokes" name="smoking" value="2">
-            <label for="Smokes">Smokes</label><br>
-
+          </td>
+          <td></td>
+          </tr>
+          <tr> 
+          <td style="text-align:center" colspan="2"> 
             <br>
-            <button style="background-color: crimson;" style="color:#fff;"  type="submit" value="Submit"><strong>Predict Stroke Likelihood</strong></button>  
+            <button style="background-color: crimson;" style="color:#fff;"  type="submit" value="Submit">
+              <strong>Predict Stroke Likelihood</strong></button>   
+          </td>
+          </tr>
+          <tr>
+            <td style="text-align:right" colspan="2"> 
+              <br>
+              <h3> {{ prediction_text }}</h3>
+              <br>
+            </td>
+          </tr>
+          </table>
           </form>
-          <br>
-          <h3>{{ prediction_text }}</h3>
-          <br>
+          
           <!-- <input type="reset"> -->
         </div>
         </form>
@@ -163,10 +210,8 @@
           crossorigin="anonymous"></script>
 
         <!-- Our JS -->
-        <script type="text/javascript" src="/static/js/config-key.js"></script>
-
-
-        <script type="text/javascript" src="/static/js/choropleth.js"></script>
+        <!-- <script type="text/javascript" src="/static/js/config-key.js"></script>  -->
+        <!-- <script type="text/javascript" src="/static/js/choropleth.js"></script> -->
       </div>
     </div>
   </div>
